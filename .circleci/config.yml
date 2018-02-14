@@ -43,7 +43,7 @@ jobs:
 
       - run: which gcloud
 
-      - run: sudo gcloud --quiet components update
+      #- run: sudo gcloud --quiet components update
       - run: sudo gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
       - run: sudo gcloud config set project cellular-hybrid-849
 
