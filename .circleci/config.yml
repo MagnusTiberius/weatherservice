@@ -31,8 +31,9 @@ jobs:
 
       # specify any bash command here prefixed with `run: `
       - run: sudo apt-get install lsb-core
-      - run: export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
       - run: lsb_release -c -s
+      - run: export LSB=$(lsb_release -c -s)
+      - run: export CLOUD_SDK_REPO="cloud-sdk-$LSB"
       - run: echo $CLOUD_SDK_REPO
       - run: echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
       - run: cat /etc/apt/sources.list.d/google-cloud-sdk.list
