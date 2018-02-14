@@ -21,6 +21,13 @@ jobs:
     steps:
       - checkout
 
+      - run: make
+
+      - save_cache:
+          key: v1-pkg-cache
+          paths:
+            - "/go/pkg"
+
       # specify any bash command here prefixed with `run: `
-      #- run: go get -v -t -d ./...
+      - run: go get -v -t -d github.com/gorilla/mux
       #- run: go test -v ./...
