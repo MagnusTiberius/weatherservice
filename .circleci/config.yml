@@ -51,5 +51,5 @@ jobs:
       - run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
       - run: docker push  magnustiberius/weatherserviceweb
 
-      - run: docker build -t $GHOST/$GPROJECT-ID/weatherserviceweb .
-      - run: gcloud docker -- push $GHOST/$GPROJECT-ID/weatherserviceweb
+      - run: docker build -t us.gcr.io/cellular-hybrid-849/weatherserviceweb .
+      - run: gcloud docker -- push us.gcr.io/cellular-hybrid-849/weatherserviceweb
