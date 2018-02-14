@@ -7,6 +7,12 @@ Design
 3. Call DarkSide online API and send a request with lat/lng values.
 4. Upone receiving the reply, display output.
 
+Build status
+
+https://circleci.com/gh/MagnusTiberius/weatherservice.svg?style=svg
+
+Please refer to CircleCI https://circleci.com/gh/MagnusTiberius/weatherservice
+
 
 References:
 1. https://developers.google.com/maps/documentation/geocoding/intro
