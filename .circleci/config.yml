@@ -28,6 +28,8 @@ jobs:
           paths:
             - "/go/pkg"
 
+      - setup_remote_docker
+
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d github.com/gorilla/mux
       #- run: go test -v ./...
