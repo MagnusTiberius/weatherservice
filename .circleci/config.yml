@@ -23,8 +23,7 @@ jobs:
 
       #- run: make
 
-      - save_cache:
-          key: v1-pkg-cache
+      - save_cache:          key: v1-pkg-cache
           paths:
             - "/go/pkg"
 
@@ -33,3 +32,4 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d github.com/gorilla/mux
       #- run: go test -v ./...
+      - run: go build -v
