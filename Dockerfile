@@ -1,7 +1,7 @@
 FROM golang
 
-ADD . /go/src/github.com/MagnusTiberius/weatherservice
+ADD ./web.exe /usr/local/bin/
 
-ENTRYPOINT /go/bin/outyet
+ENTRYPOINT /usr/local/bin/web.exe
 
 EXPOSE 8080
