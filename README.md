@@ -20,6 +20,10 @@ docker pull magnustiberius/weatherserviceweb
 
 Todo: Once Google is setup, docker push will route to a Google container repo.
 
+Dependent Microservices
+
+1. https://github.com/MagnusTiberius/weatherservicedarksky
+
 References:
 1. https://developers.google.com/maps/documentation/geocoding/intro
 2. https://darksky.net
