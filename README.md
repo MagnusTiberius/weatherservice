@@ -12,8 +12,6 @@ Build status
 [![CircleCI](https://circleci.com/gh/MagnusTiberius/weatherservice.svg?style=svg)](https://circleci.com/gh/MagnusTiberius/weatherservice)
 
 
-Please refer to CircleCI https://circleci.com/gh/MagnusTiberius/weatherservice
-
 
 References:
 1. https://developers.google.com/maps/documentation/geocoding/intro
