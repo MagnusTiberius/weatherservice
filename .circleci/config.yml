@@ -23,9 +23,9 @@ jobs:
 
       #- run: make
 
-      - save_cache:          key: v1-pkg-cache
-          paths:
-            - "/go/pkg"
+      #- save_cache: key: v1-pkg-cache
+      #    paths:
+      #      - "/go/pkg"
 
       - setup_remote_docker
 
