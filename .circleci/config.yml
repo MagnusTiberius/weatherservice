@@ -38,7 +38,7 @@ jobs:
       - run: echo "deb http://packages.cloud.google.com/apt cloud-sdk-stretch main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
       - run: cat /etc/apt/sources.list.d/google-cloud-sdk.list
       - run: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-      - run: sudo apt-get update && sudo apt-get install google-cloud-sdk
+      - run: sudo apt-get update && sudo apt-get install google-cloud-sdk kubectl
       - run: go version
       - run: go get -v -t -d github.com/gorilla/mux
       #- run: go test -v ./...
