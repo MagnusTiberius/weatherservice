@@ -40,6 +40,11 @@ jobs:
       - run: cat /etc/apt/sources.list.d/google-cloud-sdk.list
       - run: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
       - run: sudo apt-get update && sudo apt-get install google-cloud-sdk kubectl
+
+      - run: sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+      - run: sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+      - run: sudo /opt/google-cloud-sdk/bin/gcloud config set project cellular-hybrid-849
+
       - run: go version
       - run: go get -v -t -d github.com/gorilla/mux
       #- run: go test -v ./...
