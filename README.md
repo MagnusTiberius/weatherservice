@@ -9,7 +9,8 @@ Design
 
 Build status
 
-https://circleci.com/gh/MagnusTiberius/weatherservice.svg?style=svg
+[![CircleCI](https://circleci.com/gh/MagnusTiberius/weatherservice.svg?style=svg)](https://circleci.com/gh/MagnusTiberius/weatherservice)
+
 
 Please refer to CircleCI https://circleci.com/gh/MagnusTiberius/weatherservice
 
