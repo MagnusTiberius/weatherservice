@@ -30,6 +30,7 @@ jobs:
       - setup_remote_docker
 
       # specify any bash command here prefixed with `run: `
+      - run: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
       - run: sudo apt-get update && sudo apt-get install google-cloud-sdk
       - run: go version
       - run: go get -v -t -d github.com/gorilla/mux
