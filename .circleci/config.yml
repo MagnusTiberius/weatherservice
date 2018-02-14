@@ -36,8 +36,7 @@ jobs:
       - run: go build -v web/main.go
       - run: mv main.exe web.exe
       - run: ls -l
-
+      # docker build, login and push. 
       - run: docker build -t "magnustiberius/weatherserviceweb" .
-
       - run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
       - run: docker push  magnustiberius/weatherserviceweb

@@ -18,6 +18,7 @@ Each build will create a docker container which is packaged and sent to a tempor
 
 docker pull magnustiberius/weatherserviceweb
 
+Todo: Once Google is setup, docker push will route to a Google container repo.
 
 References:
 1. https://developers.google.com/maps/documentation/geocoding/intro
