@@ -12,6 +12,12 @@ Build status
 [![CircleCI](https://circleci.com/gh/MagnusTiberius/weatherservice.svg?style=svg)](https://circleci.com/gh/MagnusTiberius/weatherservice)
 
 
+Docker Container
+
+Each build will create a docker container which is packaged and sent to a temporary repo, to pull the container, see command below.
+
+docker pull magnustiberius/weatherserviceweb
+
 
 References:
 1. https://developers.google.com/maps/documentation/geocoding/intro
