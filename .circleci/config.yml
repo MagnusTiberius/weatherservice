@@ -30,6 +30,7 @@ jobs:
       - setup_remote_docker
 
       # specify any bash command here prefixed with `run: `
+      - run: sudo apt-get update && sudo apt-get install google-cloud-sdk
       - run: go version
       - run: go get -v -t -d github.com/gorilla/mux
       #- run: go test -v ./...
@@ -41,5 +42,5 @@ jobs:
       - run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
       - run: docker push  magnustiberius/weatherserviceweb
 
-      - run: apt-get update && sudo apt-get install google-cloud-sdk
+
       - run: gcloud docker -- push $GHOST/$GPROJECT-ID/weatherserviceweb
