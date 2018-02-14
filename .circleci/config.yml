@@ -30,7 +30,7 @@ jobs:
       - setup_remote_docker
 
       # specify any bash command here prefixed with `run: `
-      - run: export CLOUD_SDK_REPO="cloud-sdk-$(os_release -c -s)"
+      - run: export CLOUD_SDK_REPO="cloud-sdk-$(/etc/os_release -c -s)"
       - run: echo $CLOUD_SDK_REPO
       - run: echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
       - run: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
