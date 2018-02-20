@@ -54,7 +54,7 @@ jobs:
       #- run: go test -v ./...
       - run: go build -v web/main.go
       - run: ls -l
-      - run: mv main.exe web.exe
+      - run: mv main web.exe
       - run: ls -l
       # docker build, login and push.
       - run: docker build -t "magnustiberius/weatherserviceweb" .
