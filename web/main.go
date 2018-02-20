@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"html/template"
 	"io"
-	"log"
 	"net/http"
 )
 
@@ -98,12 +97,6 @@ func FromJSON(reader io.Reader) (*Forecast, error) {
 
 var t template.Template
 
-type ContactDetails struct {
-	Email   string
-	Subject string
-	Message string
-}
-
 type Address struct {
 	addr string
 }
@@ -117,26 +110,16 @@ func main() {
 			return
 		}
 
-		details := ContactDetails{
-			Email:   r.FormValue("email"),
-			Subject: r.FormValue("subject"),
-			Message: r.FormValue("message"),
-		}
-
-		// do something with details
+		details := Address{}
 		_ = details
 
 		tmpl.Execute(w, struct{ Success bool }{true})
 	})
-
 	http.ListenAndServe(":8080", nil)
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 	t.Execute(w, Forecast{})
-	log.Printf("0004\n\n")
 
-	//response := ResponseMessage{Message: "Hello, " + name, Code: 200}
-	//JsonResponseWrite(w, response, 200)
 }
