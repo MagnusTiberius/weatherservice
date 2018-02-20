@@ -45,7 +45,7 @@ jobs:
 
       #- run: sudo gcloud --quiet components update
       - run: sudo gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
-      - run: sudo gcloud config set project cellular-hybrid-849
+      - run: sudo gcloud config set project weatherservice-195512
       - run: sudo gcloud config set compute/zone us-central1-a
       - run: sudo gcloud auth list
 
@@ -61,5 +61,5 @@ jobs:
       - run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
       - run: docker push  magnustiberius/weatherserviceweb
 
-      - run: docker build -t us.gcr.io/cellular-hybrid-849/weatherserviceweb .
-      - run: gcloud docker -- push us.gcr.io/cellular-hybrid-849/weatherserviceweb
+      - run: docker build -t us.gcr.io/weatherservice-195512/weatherserviceweb .
+      - run: gcloud docker -- push us.gcr.io/weatherservice-195512/weatherserviceweb
