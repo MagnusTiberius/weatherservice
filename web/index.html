@@ -10,9 +10,9 @@
       var strEpoch = ts.toString();
       var url = "";
       if (strEpoch == "NaN" ) {
-        url = "http://35.184.72.43:8090/address/" + encodeURIComponent(addr);
+        url = "http://35.225.142.51:8090/address/" + encodeURIComponent(addr);
       } else {
-        url = "http://35.184.72.43:8090/address/" + encodeURIComponent(addr) + "/" + strEpoch;
+        url = "http://35.225.142.51:8090/address/" + encodeURIComponent(addr) + "/" + strEpoch;
       }
       var http = new XMLHttpRequest();
       http.open("GET", url, true);

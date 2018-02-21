@@ -3,28 +3,39 @@ package main
 import (
 	"html/template"
 	"net/http"
+
+	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
-var t template.Template
+var tmpl *template.Template
 
 type Address struct {
 	addr string
 }
 
 func main() {
-	tmpl := template.Must(template.ParseFiles("/var/www/html/index.html"))
-	//tmpl := template.Must(template.ParseFiles("web/index.html"))
+	tmpl = template.Must(template.ParseFiles("/var/www/html/index.html"))
+	//tmpl = template.Must(template.ParseFiles("web/index.html"))
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != http.MethodPost {
-			tmpl.Execute(w, nil)
-			return
-		}
-
-		details := Address{}
-		_ = details
-
-		tmpl.Execute(w, struct{ Success bool }{true})
+	r := mux.NewRouter()
+	r.HandleFunc("/", IndexHandler)
+	c := cors.New(cors.Options{
+		AllowedOrigins:   []string{"http://localhost:8088", "http://35.226.247.163:8088/"},
+		AllowCredentials: true,
 	})
-	http.ListenAndServe(":8088", nil)
+
+	handler := c.Handler(r)
+
+	http.ListenAndServe(":8088", handler)
+}
+
+func IndexHandler(w http.ResponseWriter, r *http.Request) {
+
+	q := r.URL.Query()
+	name := q.Get("name")
+	if name == "" {
+		name = "unknown"
+	}
+	tmpl.Execute(w, struct{ Success bool }{true})
 }
