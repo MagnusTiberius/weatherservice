@@ -6,7 +6,7 @@
   <script>
   function submitIt() {
       var addr = document.getElementsByName('addr')[0].value
-      var url = "http://localhost:8090/address/" + encodeURIComponent(addr);
+      var url = "http://35.225.18.245:8090/address/" + encodeURIComponent(addr);
       var http = new XMLHttpRequest();
       http.open("GET", url, true);
       //Send the proper header information along with the request
