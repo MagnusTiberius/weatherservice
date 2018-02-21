@@ -57,9 +57,9 @@ jobs:
       - run: mv main web.exe
       - run: ls -la
       # docker build, login and push.
-      #- run: docker build -t "magnustiberius/weatherserviceweb" .
-      #- run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
-      #- run: docker push  magnustiberius/weatherserviceweb
+      - run: docker build -t "magnustiberius/weatherserviceweb" .
+      - run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
+      - run: docker push  magnustiberius/weatherserviceweb
 
       - run: docker build -t us.gcr.io/weatherservice-195512/weatherserviceweb .
 
