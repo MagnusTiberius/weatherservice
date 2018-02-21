@@ -5,7 +5,15 @@
   <script>
   function submitIt() {
       var addr = document.getElementsByName('addr')[0].value
-      var url = "http://35.184.72.43:8090/address/" + encodeURIComponent(addr);
+      var dateTime = document.getElementsByName('datetime')[0].value
+      var ts = Math.round((new Date(dateTime)).getTime() / 1000);
+      var strEpoch = ts.toString();
+      var url = "";
+      if (strEpoch == "NaN" ) {
+        url = "http://35.184.72.43:8090/address/" + encodeURIComponent(addr);
+      } else {
+        url = "http://35.184.72.43:8090/address/" + encodeURIComponent(addr) + "/" + strEpoch;
+      }
       var http = new XMLHttpRequest();
       http.open("GET", url, true);
       http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -22,10 +30,13 @@
   <h1>Weather Service</h1>
   	<div>
   		<label>Enter Address:</label>
-  		<input type="text" name="addr">
-  		<button type="button" onclick="submitIt()">Try it</button>
+  		<input type="text" name="addr" value="Dallas TX">
+  		<button type="button" onclick="submitIt()">Try it</button><br>
+      <label>Enter Date Time:</label>
+      <input type="text" name="datetime" value="14 Jun 2017 00:00:00 PDT"><br>
   	</div>
-    <textarea id="resp" name="resp" rows=60 cols=80></textarea>
+    <br>
+    <textarea id="resp" name="resp" rows=30 cols=90></textarea>
 </body>
 
 <html>
