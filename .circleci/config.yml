@@ -53,9 +53,9 @@ jobs:
       - run: go get -v -t -d github.com/gorilla/mux
       #- run: go test -v ./...
       - run: go build -v web/main.go
-      - run: ls -l
+      - run: ls -la
       - run: mv main web.exe
-      - run: ls -l
+      - run: ls -la
       # docker build, login and push.
       #- run: docker build -t "magnustiberius/weatherserviceweb" .
       #- run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
@@ -71,7 +71,7 @@ jobs:
       - run: gcloud config set compute/zone us-central1-a
       - run: gcloud container images list
       - run: gcloud compute instances list
-
+      #- run: gcloud container clusters create weather-cluster --num-nodes=2
       - run: gcloud container clusters get-credentials weather-cluster
       #- run: kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec.containers[*].image}"
       - run: kubectl get pods
