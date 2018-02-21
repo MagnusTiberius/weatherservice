@@ -10,4 +10,4 @@
      - name: weatherserviceweb
        image: us.gcr.io/weatherservice-195512/weatherserviceweb
        ports:
-         - containerPort: 8080
+         - containerPort: 8088
