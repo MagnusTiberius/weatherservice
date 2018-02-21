@@ -9,7 +9,7 @@ see https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmboj
 
 **Design**
 
-1. Wait for address and date-time to get submitted into the page.
+1. Wait for address and/or date-time to get submitted into the page.
 2. Call Google geocoding service, basically sending an address and receiving a package back containing lat/lng values.
 3. Call DarkSide online API and send a request with lat/lng and(or) date-time values.
 4. Upon receiving the reply, display output.
