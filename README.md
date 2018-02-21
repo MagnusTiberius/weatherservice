@@ -10,9 +10,8 @@ see https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmboj
 **Design**
 
 1. Wait for address and/or date-time to get submitted into the page.
-2. Call Google geocoding service, basically sending an address and receiving a package back containing lat/lng values.
-3. Call DarkSide online API and send a request with lat/lng and(or) date-time values.
-4. Upon receiving the reply, display output.
+2. Pass address and/or datetime to microservice. See https://github.com/MagnusTiberius/weatherservicedarksky for details.
+3. Upon receiving the reply, display output to a textarea field in json format.
 
 **Build status**
 
