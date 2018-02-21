@@ -2,7 +2,7 @@
  apiVersion: v1
  kind: Pod
  metadata:
-   name: web-weather
+   name: web-weather-service
    labels:
      app: web
  spec:
