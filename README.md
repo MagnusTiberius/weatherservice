@@ -17,10 +17,6 @@ Please see .circleci/config.yml for details about the CI build.
 
 Each build will create a docker container which is packaged and sent to a Google Cloud project repo.
 
-A demo container is prepared and is available as well, to pull the container, see command below.
-```
-docker pull magnustiberius/weatherserviceweb
-```
 
 **Google Cloud**
 1. A config.yml script sets up a gcloud environment during build which then creates and pushes the docker container to the repo.
@@ -29,7 +25,7 @@ docker pull magnustiberius/weatherserviceweb
    kubectl run web-weather --image=us.gcr.io/weatherservice-195512/weatherserviceweb --port 8088
    ```
 3. A create service command is then used to expose it.
-  ```
+   ```
    kubectl expose deployment web-weather --type=LoadBalancer --port 8088 --target-port 8088
    ```
 
