@@ -4,8 +4,7 @@
 1. Weather data is at http://35.225.142.51:8090/address/Dallas%20TX/255589200
 2. User interface is at http://35.193.30.249:8088/
 
-note: you will need to download a Chrome plugin from CORS.
-see https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+note: you will need to download a Chrome plugin from CORS. Once the plugin is installed, please enable CORS so that the UI can recieve data from the sibling microservice. Please download it at  https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
 
 **Design**
 
