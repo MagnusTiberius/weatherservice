@@ -63,6 +63,7 @@ jobs:
       - run: mv main api.exe
       - run: ls -la
       - run: chmod -x run.sh
+      - run: ls -la
       # docker build, login and push.
       - run: docker build -t "magnustiberius/weatherserviceweb" .
       - run: docker login -u=$DOCKER_USER -p=$DOCKER_PASS
