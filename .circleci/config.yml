@@ -62,7 +62,7 @@ jobs:
       - run: ls -la
       - run: mv main api.exe
       - run: ls -la
-      - run: chmod -x run.sh
+      - run: sudo chmod -x ./run.sh
       - run: ls -la
       # docker build, login and push.
       - run: docker build -t "magnustiberius/weatherserviceweb" .
