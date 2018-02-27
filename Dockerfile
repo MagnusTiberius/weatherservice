@@ -7,4 +7,4 @@ ADD ./web/index.html /var/www/html/index.html
 
 ENTRYPOINT /usr/local/bin/run.sh
 
-EXPOSE 8088
+EXPOSE 8088 8090
