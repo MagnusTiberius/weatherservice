@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weatherserviceweb
+  name: weatherserviceweb2
   labels:
-    app: weatherserviceweb
+    app: weatherserviceweb2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: weatherserviceweb
+      app: weatherserviceweb2
   template:
     metadata:
       labels:
-        app: weatherserviceweb
+        app: weatherserviceweb2
     spec:
       containers:
-      - name: weatherserviceweb
+      - name: weatherserviceweb2
         image: us.gcr.io/weatherservice-195512/weatherserviceweb
         ports:
-        - containerPort: 8094
+        - containerPort: 8088

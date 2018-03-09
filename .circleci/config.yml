@@ -87,6 +87,7 @@ jobs:
       - run: gcloud container clusters get-credentials weather-cluster
       #- run: kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec.containers[*].image}"
       - run: kubectl get pods
+      - run: kubectl create -f https://raw.githubusercontent.com/MagnusTiberius/weatherservice/master/deploy.yml
       #- run: kubectl delete pods --all
       #- run: kubectl get pods
       #- run: kubectl run web-weather --image=us.gcr.io/weatherservice-195512/weatherserviceweb --port 8088

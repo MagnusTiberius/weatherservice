@@ -21,13 +21,13 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", IndexHandler)
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:8088", "http://35.226.247.163:8088/"},
+		AllowedOrigins:   []string{"http://localhost:8089", "http://35.226.247.163:8089/"},
 		AllowCredentials: true,
 	})
 
 	handler := c.Handler(r)
 
-	http.ListenAndServe(":8088", handler)
+	http.ListenAndServe(":8089", handler)
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
