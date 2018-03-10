@@ -87,8 +87,8 @@ jobs:
       - run: gcloud container clusters get-credentials weather-cluster
       #- run: kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec.containers[*].image}"
       - run: kubectl get pods
-      - run: kubectl apply -f https://raw.githubusercontent.com/MagnusTiberius/weatherservice/master/deploy.yml
-      - run: kubectl apply -f https://raw.githubusercontent.com/MagnusTiberius/weatherservice/master/service.yml
+      #- run: kubectl apply -f https://raw.githubusercontent.com/MagnusTiberius/weatherservice/master/deploy.yml
+      #- run: kubectl apply -f https://raw.githubusercontent.com/MagnusTiberius/weatherservice/master/service.yml
       - run: kubectl get svc
       #- run: kubectl run webweather5 --image=us.gcr.io/weatherservice-195512/weatherserviceweb --port 8089
       #- run: kubectl expose deployment webweather5 --type=LoadBalancer --port 8089 --target-port 8089
