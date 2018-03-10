@@ -64,9 +64,9 @@ func AddressHandler(w http.ResponseWriter, r *http.Request) {
 	tm := vars["time"]
 	if tm == "" {
 		log.Print("time undefined")
-		url = "http://35.226.125.10:8091/address/" + addr
+		url = "http://104.154.21.68:8091/address/" + addr
 	} else {
-		url = "http://35.226.125.10:8091/address/" + addr + "/" + tm
+		url = "http://104.154.21.68:8091/address/" + addr + "/" + tm
 	}
 
 	fmt.Printf("url:%s\n\n", url)
