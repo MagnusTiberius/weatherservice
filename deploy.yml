@@ -18,4 +18,4 @@ spec:
       - name: weatherserviceweb2
         image: us.gcr.io/weatherservice-195512/weatherserviceweb
         ports:
-        - containerPort: 8088
+        - containerPort: 8089
