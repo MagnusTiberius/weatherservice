@@ -10,6 +10,7 @@
       var strEpoch = ts.toString();
       var url = "";
       var host = "address/"
+      //var host = "http://35.226.125.10:8091/address/"
       var eaddr = encodeURIComponent(addr)
       if (strEpoch == "NaN" ) {
         url = host + eaddr;
@@ -21,10 +22,24 @@
       http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       http.onreadystatechange = function() {
           if(http.readyState == 4 && http.status == 200) {
-              document.getElementById("resp").innerHTML = http.responseText;
+              var resptxt = http.responseText;
+              document.getElementById("resp").innerHTML = resptxt;
+              var respjson = JSON.parse(resptxt);
+              displayData(respjson);
           }
       }
       http.send(null);
+  }
+
+  function displayData(respjson) {
+    debugger
+    var outtxt = "";
+    var timezone = respjson.timezone;
+    outtxt = "Time Zone: " + timezone + "<br>";
+    outtxt = outtxt + "Current <br>";
+    outtxt = outtxt + "temperature: " + respjson.currently.temperature + " <br>";
+    outtxt = outtxt + "humidity: " + respjson.currently.humidity + " <br>";
+    document.getElementById("displaydata").innerHTML = outtxt;
   }
   </script></head>
 
@@ -38,7 +53,11 @@
       <input type="text" name="datetime" value="14 Jun 2017 00:00:00 PDT"><br>
   	</div>
     <br>
-    <textarea id="resp" name="resp" rows=30 cols=90></textarea>
+    <div id="displaydata">
+    </div>
+    <div>
+      <textarea id="resp" name="resp" rows=30 cols=90></textarea>
+    </div>
 </body>
 
 <html>
