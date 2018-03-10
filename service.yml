@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: weatherserviceweb
+  type: LoadBalancer
   ports:
   - protocol: TCP
     port: 8089

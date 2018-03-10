@@ -91,6 +91,7 @@ jobs:
       #- run: kubectl delete pods --all
       #- run: kubectl get pods
       #- run: kubectl run web-weather --image=us.gcr.io/weatherservice-195512/weatherserviceweb --port 8088
+      - run: kubectl create -f https://raw.githubusercontent.com/MagnusTiberius/weatherservice/master/service.yml
       #- run: kubectl delete -f pod.yml
       #- run: kubectl create -f pod.yml
       #- run: kubectl get pods

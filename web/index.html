@@ -10,9 +10,9 @@
       var strEpoch = ts.toString();
       var url = "";
       if (strEpoch == "NaN" ) {
-        url = "http://35.225.142.51:8091/address/" + encodeURIComponent(addr);
+        url = "http://apidarksky2-svc:8091/address/" + encodeURIComponent(addr);
       } else {
-        url = "http://35.225.142.51:8091/address/" + encodeURIComponent(addr) + "/" + strEpoch;
+        url = "http://apidarksky2-svc:8091/address/" + encodeURIComponent(addr) + "/" + strEpoch;
       }
       var http = new XMLHttpRequest();
       http.open("GET", url, true);
