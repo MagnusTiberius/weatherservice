@@ -9,7 +9,7 @@
       var ts = Math.round((new Date(dateTime)).getTime() / 1000);
       var strEpoch = ts.toString();
       var url = "";
-      var host = "http://localhost:8089/address/"
+      var host = ":8089/address/"
       var eaddr = encodeURIComponent(addr)
       if (strEpoch == "NaN" ) {
         url = host + eaddr;
