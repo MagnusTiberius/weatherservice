@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: weatherserviceweb
+  name: weatherserviceweb2
 spec:
   selector:
-    app: weatherserviceweb
+    app: weatherserviceweb2
   ports:
   - protocol: TCP
     port: 8089
